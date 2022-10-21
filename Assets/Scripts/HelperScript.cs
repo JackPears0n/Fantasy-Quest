@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HelperScript : MonoBehaviour
 {
-    LayerMask floorLayerMask;
+    LayerMask groundLayerMask;
     Color hitColour = Color.white;
     float raylength;
     public bool colCheck;
@@ -12,7 +12,7 @@ public class HelperScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        floorLayerMask = LayerMask.GetMask("Floor");
+        groundLayerMask = LayerMask.GetMask("Ground");
     }
 
     public bool DoRayCollisionCheck()
@@ -20,9 +20,9 @@ public class HelperScript : MonoBehaviour
         float rayLength = 0.5f;
 
         //cast a ray downward of length 1
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, rayLength, floorLayerMask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, rayLength, groundLayerMask);
 
-        hit = Physics2D.Raycast(transform.position, -Vector2.up, rayLength, floorLayerMask);
+        hit = Physics2D.Raycast(transform.position, -Vector2.up, rayLength, groundLayerMask);
 
         Debug.DrawRay(transform.position, -Vector2.up * rayLength, (hit.collider != null) ? Color.green : Color.white);
 

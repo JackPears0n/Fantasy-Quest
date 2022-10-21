@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8209390933359442206}
   - component: {fileID: 30910641290238563}
   - component: {fileID: 2053270025000525805}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Left corner point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &30910641290238563
 SpriteRenderer:
@@ -116,9 +116,9 @@ PolygonCollider2D:
       - {x: -0.4985137, y: 0.41722512}
       - {x: -0.49012613, y: -0.054237127}
       - {x: -0.012811661, y: -0.43254328}
-      - {x: 0.0625, y: -0.5}
-      - {x: 0.24123573, y: -0.5074152}
-      - {x: 0.5013385, y: -0.47966337}
+      - {x: 0.08654261, y: -0.46994674}
+      - {x: 0.2502513, y: -0.46834612}
+      - {x: 0.49957561, y: -0.46908593}
       - {x: 0.5, y: -0.09375}
       - {x: 0.5, y: 0.46875}
   m_UseDelaunayMesh: 0

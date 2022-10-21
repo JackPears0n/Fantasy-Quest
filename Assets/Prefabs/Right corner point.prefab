@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4480662280582209155}
   - component: {fileID: 3148729388725199027}
-  - component: {fileID: 1061724582930049968}
-  m_Layer: 0
+  - component: {fileID: 2032511350756638192}
+  m_Layer: 7
   m_Name: Right corner point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3148729388725199027
 SpriteRenderer:
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &1061724582930049968
+--- !u!60 &2032511350756638192
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -110,15 +110,14 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.49873066, y: 0.5024984}
-      - {x: -0.37807322, y: 0.500057}
-      - {x: -0.44003868, y: 0.46252394}
-      - {x: -0.4985137, y: 0.41722512}
-      - {x: -0.49012613, y: -0.054237127}
-      - {x: -0.012811661, y: -0.43254328}
-      - {x: 0.0625, y: -0.5}
-      - {x: 0.24123573, y: -0.5074152}
-      - {x: 0.5013385, y: -0.47966337}
-      - {x: 0.5, y: -0.09375}
-      - {x: 0.5, y: 0.46875}
+    - - {x: 0.393466, y: 0.5021508}
+      - {x: -0.5, y: 0.5}
+      - {x: -0.5, y: -0.46558475}
+      - {x: -0.21153355, y: -0.47203755}
+      - {x: -0.035128593, y: -0.47076297}
+      - {x: 0.04099083, y: -0.40535796}
+      - {x: 0.13271236, y: -0.32337713}
+      - {x: 0.24368286, y: -0.22746325}
+      - {x: 0.5021515, y: -0.029221296}
+      - {x: 0.5021515, y: 0.40852308}
   m_UseDelaunayMesh: 0
