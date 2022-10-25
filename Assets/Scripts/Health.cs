@@ -27,19 +27,20 @@ public class Health: MonoBehaviour
     }
     public void TakeDamage(float _damage)
     {
-        if (invulnerable) return;
+        if (invulnerable)
+            return;
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
 
         if (currentHealth > 0)
         {
-            anim.SetTrigger("hurt");
+            anim.SetTrigger("Hurt");
             StartCoroutine(Invunerability());
         }
         else
         {
             if (!dead)
             {
-                anim.SetTrigger("die");
+                anim.SetTrigger("Death");
 
                 //Deactivate all attached component classes
                 foreach (Behaviour component in components)

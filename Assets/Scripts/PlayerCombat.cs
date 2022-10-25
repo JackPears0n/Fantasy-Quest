@@ -34,7 +34,7 @@ public class PlayerCombat : MonoBehaviour
     void Attack()
     {
         // Plays the attack animation
-        print(attackNum);
+        //print(attackNum);
 
         if (attackNum == 0)
         {
@@ -64,8 +64,8 @@ public class PlayerCombat : MonoBehaviour
         // Damages the enemies
         foreach(Collider2D enemy in hitEnemies)
         {
-            print("We hit" + enemy.name);
-            enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+            //print("We hit" + enemy.name);
+            enemy.GetComponent<Health>().TakeDamage(attackDamage);
         }
 
     }
