@@ -6,13 +6,14 @@ using UnityEngine.SceneManagement;
 public class NextLevel : MonoBehaviour
 {
     private GameObject levelShift;
+    public string destination;
 
     // Update is called once per frame
     void Update()
     {
         if (levelShift != null)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(destination);
         }
     }
 

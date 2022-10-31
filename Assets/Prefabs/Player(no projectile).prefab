@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4826244891991331565}
   - component: {fileID: 4826244891991331564}
   - component: {fileID: 4826244891991331553}
+  - component: {fileID: 434373346577742618}
   - component: {fileID: 4826244891991331554}
   - component: {fileID: 4826244891991331552}
   - component: {fileID: 4826244891991331555}
@@ -38,7 +39,7 @@ Transform:
   m_Children:
   - {fileID: 4826244892343439471}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4826244891991331566
 SpriteRenderer:
@@ -124,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eea4f91da480aee44b2c2b76b9c71395, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 5.5
   touchingPlatform: 0
   projectile: {fileID: 0}
 --- !u!114 &4826244891991331564
@@ -146,6 +147,8 @@ MonoBehaviour:
     m_Bits: 256
   attackRange: 0.83
   attackDamage: 0
+  projectile: {fileID: 0}
+  projectileDamage: 0
 --- !u!114 &4826244891991331553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,7 +164,21 @@ MonoBehaviour:
   startingHealth: 100
   iFramesDuration: 1
   numberOfFlashes: 1
-  components: []
+  components:
+  - {fileID: 4826244891991331552}
+  - {fileID: 4826244891991331555}
+--- !u!114 &434373346577742618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4826244891991331560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3e8ed7416c45ee4b82b4a48db13ffd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &4826244891991331554
 Rigidbody2D:
   serializedVersion: 4
