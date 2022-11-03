@@ -7,7 +7,8 @@ public class Health: MonoBehaviour
     [Header("Health")]
     [SerializeField] private float startingHealth;
     public float currentHealth { get; private set; }
-    private float maxHealth = 100;
+    private float playerMaxHealth;
+    public int heartContainersNum;
     private Animator anim;
     private bool dead;
 
@@ -25,6 +26,15 @@ public class Health: MonoBehaviour
         currentHealth = startingHealth;
         anim = GetComponent<Animator>();
         spriteRend = GetComponent<SpriteRenderer>();
+    }
+
+    private void Update()
+    {
+        if (gameObject.CompareTag("Player"))
+        {
+            playerMaxHealth = startingHealth + (heartContainersNum * 10);
+            currentHealth = playerMaxHealth;
+        }
     }
     public void TakeDamage(float _damage)
     {
@@ -74,7 +84,8 @@ public class Health: MonoBehaviour
     {
         if (gameObject.CompareTag("Heart container"))
         {
-            maxHealth += 10;
+            heartContainersNum += 1;
+            Destroy(collision.gameObject);
         }
     }
 }
