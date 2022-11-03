@@ -11987,6 +11987,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8150469332243308836, guid: 79a895f9867472548b06b321e2ff687f, type: 3}
+      propertyPath: throwPoint
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8150469332243308839, guid: 79a895f9867472548b06b321e2ff687f, type: 3}
       propertyPath: m_RootOrder
       value: 1

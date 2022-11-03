@@ -5,31 +5,54 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
+    Rigidbody2D rb;
 
+    [Header("Animator")]
     public Animator animator;
     int attackNum;
 
-    public Transform attackPoint;
+    [Header("Target layers")]
     public LayerMask enemyLayers;
 
+    [Header("Melee")]
+    public Transform attackPoint;
     public float attackRange = 0.5f;
     public int attackDamage;
 
+    [Header("Ranged")]
     public GameObject projectile;
     public int projectileDamage;
+    public Transform shotPoint;
+    public float timeBtwnShots;
+    public float startTimeBtwnShots;
 
     // Start is called before the first frame update
     void Start()
     {
         attackNum = 0;
         attackDamage = 20;
+        projectileDamage = 10;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Attack(); // Left click
-        Throw(); // Right click
+        Attack();
+
+        //Throw
+        if (timeBtwnShots <= 0)
+        {
+            if (Input.GetMouseButtonDown(1))
+            {
+                Instantiate(projectile, shotPoint.position, transform.rotation);
+                timeBtwnShots = startTimeBtwnShots;
+            }
+        }
+        else
+        {
+            timeBtwnShots -= Time.deltaTime;
+        }
+        
     }
 
     void Attack()
@@ -79,36 +102,6 @@ public class PlayerCombat : MonoBehaviour
 
     }
 
-    void OnDrawGizmosSelected()
-    {
-        if (attackPoint == null)
-            return;
-
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
-    }
-
-    void Throw()
-    {
-        float moveDirection = 1.5f;
-
-        if (Input.GetMouseButtonDown(1))
-        {
-            // Instantiate the bullet at the position and rotation of the player
-            GameObject clone;
-            clone = Instantiate(projectile);
-
-            // get the rigidbody component
-            Rigidbody2D rb = clone.GetComponent<Rigidbody2D>();
-
-            // set the velocity
-            rb.velocity = new Vector3(15 * moveDirection, 0, 0);
-
-            // set the position close to the player
-            rb.transform.position = new Vector3(transform.position.x + 1, transform.position.y + 2, transform.position.z);
-
-            Thread.Sleep(1);
-        }
-    }
     void OnCollisionEnter2D()
     {
         Health enemyHealth = projectile.transform.GetComponent<Health>();
@@ -116,5 +109,12 @@ public class PlayerCombat : MonoBehaviour
         {
             enemyHealth.TakeDamage(projectileDamage);
         }
+    }
+    void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null)
+            return;
+
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 }
