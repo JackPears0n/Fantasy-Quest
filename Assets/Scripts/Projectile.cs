@@ -4,10 +4,24 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    /*
     public float speed;
+    public float distance;
+    public float projectileDamage = 10;
+    public LayerMask whatIsSolid;
 
     public void Update()
     {
+        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.up, distance, whatIsSolid);
+        if (hitInfo.collider != null)
+        {
+            if (hitInfo.collider.CompareTag("Enemy"))
+            {
+                print("Enemy must take damage");
+                hitInfo.collider.GetComponent<Health>().TakeDamage(projectileDamage);
+            }
+        }
+
         transform.Translate(transform.up * speed * Time.deltaTime);
     }
 
@@ -18,4 +32,5 @@ public class Projectile : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+    */
 }
