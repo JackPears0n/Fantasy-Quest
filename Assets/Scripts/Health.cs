@@ -8,7 +8,6 @@ public class Health: MonoBehaviour
     [SerializeField] private float startingHealth;
     public float currentHealth { get; private set; }
     private float playerMaxHealth;
-    public int heartContainersNum;
     private Animator anim;
     private bool dead;
 
@@ -24,18 +23,19 @@ public class Health: MonoBehaviour
     private void Awake()
     {
         currentHealth = startingHealth;
+        playerMaxHealth = 100;
         anim = GetComponent<Animator>();
         spriteRend = GetComponent<SpriteRenderer>();
     }
 
-    private void Update()
+    void Update()
     {
-        if (gameObject.CompareTag("Player"))
+        if ((gameObject.tag == "Health container"))
         {
-            playerMaxHealth = startingHealth + (heartContainersNum * 10);
-            currentHealth = playerMaxHealth;
+            AddHealth(10);
         }
     }
+
     public void TakeDamage(float _damage)
     {
         if (invulnerable)
@@ -61,10 +61,13 @@ public class Health: MonoBehaviour
             }
         }
     }
-    public void AddHealth(float _value)
+
+    public void AddHealth(int _value)
     {
-        currentHealth = Mathf.Clamp(currentHealth + _value, 0, startingHealth);
+        playerMaxHealth += _value;
+        currentHealth += _value;
     }
+
     private IEnumerator Invunerability()
     {
         invulnerable = true;
@@ -78,14 +81,5 @@ public class Health: MonoBehaviour
         }
         Physics2D.IgnoreLayerCollision(10, 11, false);
         invulnerable = false;
-    }
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (gameObject.CompareTag("Heart container"))
-        {
-            heartContainersNum += 1;
-            Destroy(collision.gameObject);
-        }
     }
 }
