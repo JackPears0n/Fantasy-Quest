@@ -7,6 +7,7 @@ public class Health: MonoBehaviour
     [Header("Health")]
     [SerializeField] private float startingHealth;
     public float currentHealth { get; private set; }
+    private float maxHealth = 100;
     private Animator anim;
     private bool dead;
 
@@ -67,5 +68,13 @@ public class Health: MonoBehaviour
         }
         Physics2D.IgnoreLayerCollision(10, 11, false);
         invulnerable = false;
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (gameObject.CompareTag("Heart container"))
+        {
+            maxHealth += 10;
+        }
     }
 }
