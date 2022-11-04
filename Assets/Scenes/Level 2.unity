@@ -11214,11 +11214,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3159804515271756724, guid: 03219ac125f8a404badf4cbac7ac93ea, type: 3}
       propertyPath: damage
-      value: 60
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3159804515271756725, guid: 03219ac125f8a404badf4cbac7ac93ea, type: 3}
+      propertyPath: startingHealth
+      value: 240
+      objectReference: {fileID: 0}
+    - target: {fileID: 3159804515271756725, guid: 03219ac125f8a404badf4cbac7ac93ea, type: 3}
+      propertyPath: iFramesDuration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3159804515271756725, guid: 03219ac125f8a404badf4cbac7ac93ea, type: 3}
+      propertyPath: numberOfFlashes
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3159804515271756727, guid: 03219ac125f8a404badf4cbac7ac93ea, type: 3}
       propertyPath: damage
-      value: 60
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3159804516023260260, guid: 03219ac125f8a404badf4cbac7ac93ea, type: 3}
       propertyPath: m_RootOrder
