@@ -7,7 +7,7 @@ public class Health: MonoBehaviour
     [Header("Health")]
     [SerializeField] private float startingHealth;
     public float currentHealth { get; private set; }
-    private float playerMaxHealth;
+    private static float playerMaxHealth;
     private Animator anim;
     private bool dead;
 
@@ -65,7 +65,7 @@ public class Health: MonoBehaviour
     public void AddHealth(int _value)
     {
         playerMaxHealth += _value;
-        currentHealth += _value;
+        currentHealth = playerMaxHealth;
     }
 
     private IEnumerator Invunerability()
