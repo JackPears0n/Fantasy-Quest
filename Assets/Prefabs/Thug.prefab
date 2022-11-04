@@ -32,7 +32,7 @@ Transform:
   - {fileID: 1583143111310037446}
   - {fileID: 1583143111416057707}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1583143111310037447
 GameObject:
@@ -224,7 +224,7 @@ MonoBehaviour:
   attackCooldown: 1
   range: 1.63
   colliderDistance: -0.4
-  damage: 20
+  damage: 10
   capsuleCollider: {fileID: 1583143111416057706}
   playerLayer:
     serializedVersion: 2

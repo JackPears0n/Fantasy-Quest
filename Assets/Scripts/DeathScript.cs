@@ -12,5 +12,12 @@ public class DeathScript : MonoBehaviour
         {
             SceneManager.LoadScene("Level 1");
         }
+        
+        /*
+        if (Health.dead)
+        {
+            SceneManager.LoadScene("Level 1");
+        }
+        */
     }
 }
