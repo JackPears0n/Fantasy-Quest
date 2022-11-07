@@ -4,33 +4,33 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    /*
-    public float speed;
-    public float distance;
-    public float projectileDamage = 10;
-    public LayerMask whatIsSolid;
+    [Header("Target layers")]
+    public LayerMask enemyLayers;
 
-    public void Update()
+    [Header("Ranged")]
+    public Transform projectile;
+    public Transform throwPoint;
+    public float attackRange = 0.5f;
+
+    [Header("Damage")]
+    public int projectileDamage;
+
+    void OnCollisionEnter2D(PolygonCollider2D collision)
     {
-        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.up, distance, whatIsSolid);
-        if (hitInfo.collider != null)
+        Health enemyHealth = projectile.transform.GetComponent<Health>();
+        if (enemyHealth != null)
         {
-            if (hitInfo.collider.CompareTag("Enemy"))
+            enemyHealth.TakeDamage(projectileDamage);
+            // Detects the enemies
+            PolygonCollider2D[] hitEnemies = (PolygonCollider2D[])Physics2D.OverlapCircleAll(throwPoint.position, attackRange, enemyLayers);
+
+            // Damages the enemies
+            foreach(PolygonCollider2D enemy in hitEnemies)
             {
-                print("Enemy must take damage");
-                hitInfo.collider.GetComponent<Health>().TakeDamage(projectileDamage);
+                //print("We hit" + enemy.name);
+                enemy.GetComponent<Health>().TakeDamage(projectileDamage);
             }
         }
-
-        transform.Translate(transform.up * speed * Time.deltaTime);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (gameObject.tag == "Enemy" || gameObject.tag == "Ground")
-        {
-            gameObject.SetActive(false);
-        }
-    }
-    */
 }
