@@ -65,4 +65,9 @@ public class MeleeEnemy : MonoBehaviour
             playerHealth.TakeDamage(damage);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        print("hit by a " + collision.gameObject.name);
+    }
 }
