@@ -15,7 +15,7 @@ public class Projectile : MonoBehaviour
     [Header("Damage")]
     public int projectileDamage;
 
-    void OnCollisionEnter2D(PolygonCollider2D collision)
+    void OnCollisionEnter2D(UnityEngine.Collision2D collision)
     {
         Health enemyHealth = projectile.transform.GetComponent<Health>();
         if (enemyHealth != null)

@@ -8,14 +8,14 @@ using UnityEngine.UIElements;
 public class PlayerScript : MonoBehaviour
 {
     Rigidbody2D rb;
-    public float speed;
-    public bool touchingPlatform;
-    private Animator anim;
-    bool isJumping;
     HelperScript helper;
-    public GameObject projectile;
+    private Animator anim;
+    public float speed;
     bool isGrounded;
-    private int curentHealth;
+    public bool touchingPlatform;
+    bool isJumping;
+    public GameObject projectile;
+    private GameObject currentTeleporter;
 
     // Start is called before the first frame update
     void Start()
