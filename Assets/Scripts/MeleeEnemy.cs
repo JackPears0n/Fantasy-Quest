@@ -70,8 +70,12 @@ public class MeleeEnemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //print("hit by a " + collision.gameObject.name);
-        GetComponent<Health>().TakeDamage(projectileDamage);
-        Destroy(collision.gameObject);
+        if (collision.CompareTag("Projectile"))
+        {
+            //print("hit by a " + collision.gameObject.name);
+            GetComponent<Health>().TakeDamage(projectileDamage);
+            Destroy(collision.gameObject);
+        }
+
     }
 }
