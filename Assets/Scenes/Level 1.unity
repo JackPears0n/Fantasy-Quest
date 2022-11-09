@@ -9138,6 +9138,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: d9beb4cfd4165a449b51ac737f4a409a, type: 3}
+--- !u!4 &946546341 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6916642251652779190, guid: 79a895f9867472548b06b321e2ff687f, type: 3}
+  m_PrefabInstance: {fileID: 1257783527}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &948020944
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12169,12 +12174,24 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4017260452257182721, guid: 79a895f9867472548b06b321e2ff687f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6916642251652779190, guid: 79a895f9867472548b06b321e2ff687f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 6916642251652779190, guid: 79a895f9867472548b06b321e2ff687f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.892
       objectReference: {fileID: 0}
     - target: {fileID: 8150469332243308832, guid: 79a895f9867472548b06b321e2ff687f, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8150469332243308836, guid: 79a895f9867472548b06b321e2ff687f, type: 3}
+      propertyPath: shotPoint
+      value: 
+      objectReference: {fileID: 946546341}
     - target: {fileID: 8150469332243308836, guid: 79a895f9867472548b06b321e2ff687f, type: 3}
       propertyPath: throwPoint
       value: 

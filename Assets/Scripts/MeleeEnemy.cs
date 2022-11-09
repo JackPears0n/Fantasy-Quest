@@ -15,6 +15,8 @@ public class MeleeEnemy : MonoBehaviour
     // References
     private Animator animator;
     private Health playerHealth;
+    private Health currentHealth;
+    private float projectileDamage = 10;
 
     private void Awake()
     {
@@ -68,6 +70,8 @@ public class MeleeEnemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("hit by a " + collision.gameObject.name);
+        //print("hit by a " + collision.gameObject.name);
+        GetComponent<Health>().TakeDamage(projectileDamage);
+        Destroy(collision.gameObject);
     }
 }

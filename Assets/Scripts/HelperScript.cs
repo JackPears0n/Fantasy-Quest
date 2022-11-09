@@ -8,6 +8,7 @@ public class HelperScript : MonoBehaviour
     Color hitColour = Color.white;
     float raylength;
     public bool colCheck;
+    public bool flipped; // For making the projectile shoot in the direction the player is facing
 
     // Start is called before the first frame update
     void Start()
@@ -36,10 +37,17 @@ public class HelperScript : MonoBehaviour
         if (flip == true)
         {
             sr.flipX = true;
+            flipped = true;
         }
         else
         {
             sr.flipX = false;
+            flipped = false;
         }
+    }
+
+    public bool GetFlipped()
+    {
+        return flipped;
     }
 }

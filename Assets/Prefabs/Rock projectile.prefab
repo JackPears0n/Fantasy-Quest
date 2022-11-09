@@ -223,7 +223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   projectile: {fileID: 3460918363557466469}
   throwPoint: {fileID: 1736791524916362520}
   attackRange: 2

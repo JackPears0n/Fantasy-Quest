@@ -14,7 +14,6 @@ public class PlayerScript : MonoBehaviour
     bool isGrounded;
     public bool touchingPlatform;
     bool isJumping;
-    public GameObject projectile;
     private GameObject currentTeleporter;
 
     // Start is called before the first frame update
