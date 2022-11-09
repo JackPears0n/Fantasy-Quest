@@ -16,7 +16,7 @@ public class MeleeEnemy : MonoBehaviour
     private Animator animator;
     private Health playerHealth;
     private Health currentHealth;
-    private float projectileDamage = 10;
+    float projectileDamage = 20;
 
     private void Awake()
     {

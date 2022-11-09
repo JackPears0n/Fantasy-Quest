@@ -36,7 +36,7 @@ public class Health: MonoBehaviour
             AddHealth(10);
         }
 
-        if (dead)
+        if (dead && CompareTag("Player"))
         {
             SceneManager.LoadScene("Level 1");
         }

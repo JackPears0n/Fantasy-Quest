@@ -22,7 +22,6 @@ public class PlayerCombat : MonoBehaviour
 
     [Header("Ranged")]
     public GameObject projectile;
-    public int projectileDamage;
     public Transform shotPoint;
 
     // Start is called before the first frame update
@@ -30,7 +29,6 @@ public class PlayerCombat : MonoBehaviour
     {
         attackNum = 0;
         attackDamage = 20;
-        projectileDamage = 10;
     }
 
     // Update is called once per frame
@@ -117,14 +115,6 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D()
-    {
-        Health enemyHealth = projectile.transform.GetComponent<Health>();
-        if (enemyHealth != null)
-        {
-            enemyHealth.TakeDamage(projectileDamage);
-        }
-    }
     void OnDrawGizmosSelected()
     {
         if (attackPoint == null)
