@@ -12148,6 +12148,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player with projectile
       objectReference: {fileID: 0}
+    - target: {fileID: 8150469332243308836, guid: 79a895f9867472548b06b321e2ff687f, type: 3}
+      propertyPath: shotPoint
+      value: 
+      objectReference: {fileID: 1113601936}
     - target: {fileID: 8150469332243308837, guid: 79a895f9867472548b06b321e2ff687f, type: 3}
       propertyPath: speed
       value: 5.5
@@ -12199,6 +12203,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 79a895f9867472548b06b321e2ff687f, type: 3}
+--- !u!4 &1113601936 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6916642251652779190, guid: 79a895f9867472548b06b321e2ff687f, type: 3}
+  m_PrefabInstance: {fileID: 1113601935}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1120480851 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3307514005157500659, guid: 0f487273e64c9104b90bc18dcd963941, type: 3}

@@ -261,7 +261,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   touchingPlatform: 0
-  projectile: {fileID: 0}
 --- !u!114 &626609815378771864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,7 +293,7 @@ MonoBehaviour:
   attackRange: 0.83
   attackDamage: 0
   projectile: {fileID: 5941221955660321967, guid: e2e30de7724ff4a4a8597cb52d88f03b, type: 3}
-  projectileDamage: 10
+  shotPoint: {fileID: 6916642251652779190}
 --- !u!114 &8150469332243308841
 MonoBehaviour:
   m_ObjectHideFlags: 0
