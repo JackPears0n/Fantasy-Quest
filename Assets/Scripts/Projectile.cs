@@ -15,21 +15,11 @@ public class Projectile : MonoBehaviour
     [Header("Damage")]
     public int projectileDamage;
 
-    void OnCollisionEnter2D(UnityEngine.Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Health enemyHealth = projectile.transform.GetComponent<Health>();
-        if (enemyHealth != null)
+        if (collision.gameObject.CompareTag("Ground"))
         {
-            enemyHealth.TakeDamage(projectileDamage);
-            // Detects the enemies
-            PolygonCollider2D[] hitEnemies = (PolygonCollider2D[])Physics2D.OverlapCircleAll(throwPoint.position, attackRange, enemyLayers);
-
-            // Damages the enemies
-            foreach(PolygonCollider2D enemy in hitEnemies)
-            {
-                //print("We hit" + enemy.name);
-                enemy.GetComponent<Health>().TakeDamage(projectileDamage);
-            }
+            Destroy(gameObject);
         }
     }
 
